@@ -5,7 +5,7 @@ const geoCode=require('./utils/geoCode')
 const focast=require('./utils/forcast')
 
 const app =express()
-
+const port =process.env.PORT ||3000
 //defile paths
 const publicDir=path.join(__dirname,'../public')
 const viewsPath=path.join(__dirname,'../templete/views')
@@ -96,6 +96,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log("Server is start on port 3000")
+app.listen(port,()=>{
+    console.log("Server is start on port "+ port)
 })
